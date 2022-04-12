@@ -52,32 +52,32 @@ def print_board(board):
 
 def check_win(board):
     """
-    This function checks for all possible four-in-a-row wins on a
+    This function checks for all possible five-in-a-row wins on a
     5x5 tic-tac-toe board.
     """
     # Possible Horizontal Wins
-    horizontal = [0, 1, 5, 6, 10, 11, 15, 16, 20, 21]
+    horizontal = [0, 5, 10, 15, 20]
     for i in horizontal:
         if (board[i] != ' '
            and board[i] == board[i + 1] == board[i + 2] == board[i + 3]):
             return board[i]
 
     # Possible Diagonal wins, left to right
-    l_diagonal = [0, 1, 5, 6]
+    l_diagonal = [0]
     for i in l_diagonal:
         if (board[i] != ' '
            and board[i] == board[i + 5 + 1] == board[i + 10 + 2] == board[i + 15 + 3]):
             return board[i]
 
     # Possible Diagonal wins, right to left
-    r_diagonal = [3, 4, 8, 9]
+    r_diagonal = [4]
     for i in r_diagonal:
         if (board[i] != ' '
            and board[i] == board[i + 5 - 1] == board[i + 10 - 2] == board[i + 15 - 3]):
             return board[i]
 
     # Possible Vertical wins
-    for i in range(10):
+    for i in range(5):
         if (board[i] != ' '
            and board[i] == board[i + 5] == board[i + 10] == board[i + 15]):
             return board[i]
