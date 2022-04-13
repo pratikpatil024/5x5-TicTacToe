@@ -6,8 +6,7 @@ Main game functions for 5x5 Tic-Tac-Toe
 
 This module contains the game code for the tictactoe module.
 
-Included is the print_board method, the check_win method, the
-save_game method, and the game method.
+Included is the print_board method, the check_win method, and the game method.
 """
 
 
@@ -93,22 +92,6 @@ def check_win(board):
 
     return ' '
 
-
-def save_game(path, board_list):
-    """
-    This function saves a list of board states to a file.
-    """
-    if path == "":
-        path = "tictactoe_"
-        path = path + strftime("%Y-%m-%d_%H:%M:%S", localtime())
-
-    with open(path, "a") as fout:
-        for elem in board_list:
-            fout.write(''.join(elem))
-            fout.write("\n")
-    print("Your game has been saved as {}".format(path))
-
-
 def game(board, path, player, algorithm_one="", algorithm_two=""):
     """
     This function contains the main game loop for the tictactoe module.
@@ -147,14 +130,8 @@ def game(board, path, player, algorithm_one="", algorithm_two=""):
         else:
             print(f"Where would you like to place your \'{turn}\'?")
             print("Format your move as a number between 1 and 25, ", end="")
-            print("and 25 being the bottom right. If you ", end="")
-            print("would like to save and quit, please ", end="")
-            print("enter \'wq\'")
+            print("and 25 being the bottom right.", end="")
             move = input("Please enter your move: ")
-
-            if move == "wq":
-                save_game(path, board_list)
-                return
 
             move = int(move) - 1
             if 0 <= move <= 24 and board[move] not in ('X', 'O'):
@@ -177,7 +154,4 @@ def game(board, path, player, algorithm_one="", algorithm_two=""):
         else:
             continue
 
-        save = input("Would you like to save the game? y/n ")
-        if save.lower() == 'y':
-            save_game(path, board_list)
         return
