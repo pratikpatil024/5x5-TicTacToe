@@ -6,3 +6,5 @@ For UAF CS605 Artificial Intelligence, Spring 2021
 
 Currently rated by pylint at an X/10, because it's impossible for me to not
 optimize a score.
+
+To run the game: `python ./tictactoe/tictactoe.py`
