@@ -92,7 +92,7 @@ def check_win(board):
 
     return ' '
 
-def game(board, player, algorithm_one="", algorithm_two=""):
+def game(board, player, algorithm_one, algorithm_two):
     """
     This function contains the main game loop for the tictactoe module.
     """
@@ -103,21 +103,13 @@ def game(board, player, algorithm_one="", algorithm_two=""):
         empty_board.append(' ')
 
     turn = 'X'
-
-    if board != empty_board:
-        num_x = board.count('X')
-        num_o = board.count('O')
-
-        if num_x != num_o:
-            turn = 'O'
-
     print("Based on the state of the board, I can see that ", end="")
     print(f"it is {turn}'s turn.")
 
     while True:
         board_list.append(board.copy())
 
-        print("This is the current board state:")
+        print("\nThis is the current board state:")
         print_board(board)
         print(f"It is \'{turn}\' player's move:")
 
