@@ -92,7 +92,7 @@ def check_win(board):
 
     return ' '
 
-def game(board, path, player, algorithm_one="", algorithm_two=""):
+def game(board, player, algorithm_one="", algorithm_two=""):
     """
     This function contains the main game loop for the tictactoe module.
     """

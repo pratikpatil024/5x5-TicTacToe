@@ -20,7 +20,6 @@ def main():
     """
     while True:
         board = []
-        path = ""
         for _ in range(25):
             board.append(' ')
 
@@ -61,7 +60,7 @@ def main():
         algorithm_one = "minimax" if algorithm_one == '1' else "mcts"
         algorithm_two = "minimax" if algorithm_two == '1' else "mcts"
 
-        game(board, path, player, algorithm_one, algorithm_two)
+        game(board, player, algorithm_one, algorithm_two)
 
     print("\nGoodbye.")
 
